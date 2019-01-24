@@ -10,6 +10,11 @@ hr {
   border-top: none;
 }
 
+.footer {
+  margin-top: 5%;
+  position: sticky;
+}
+
 @media screen and (max-width: 768px) {
   .App {
     width: 92%;

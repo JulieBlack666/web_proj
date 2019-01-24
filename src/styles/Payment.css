@@ -59,6 +59,8 @@
 
 .payment-form__submit:hover {
     cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 200ms;
 }
 
 .payment-form__reset {
