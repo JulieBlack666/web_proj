@@ -1,0 +1,105 @@
+.navbar {
+    padding: 4% 0;
+}
+
+.navbar__first-row {
+    margin-bottom: 5%;
+    font-size: 120%;
+}
+
+.navbar__choice, 
+.navbar__choice-second {
+    margin-right: 5%;
+    color: blue;
+    transition-duration: 500ms;
+}
+
+.navbar__choice-second:hover,
+.second-selected  {
+    background: rgba(175, 175, 175, 0.568);
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px rgba(175, 175, 175, 0.568);
+    padding: 3px 10px;
+    text-decoration: none;
+}
+
+.link-selected {
+    color: black;
+    pointer-events: none;
+    cursor: default;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 0;
+}
+
+.field{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 1%;
+}
+
+.payment-form__field {
+    width: 67%;
+    padding: 1%;
+}
+
+.payment-form__submit {
+    margin: 5% 15% 1%;
+    font-size: 105%;
+    background: rgba(175, 175, 175, 0.568);
+    border-radius: 10px;
+    box-shadow: -2px -2px 5px gray;
+    align-self: flex-start;
+}
+
+.payment-form__submit:hover {
+    cursor: pointer;
+}
+
+.payment-form__reset {
+    align-self: flex-start;
+    font-size: 90%;
+    background: none;
+    border: none;
+    margin: 1% 14%;
+    color: blue;
+}
+
+.payment-form__reset:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__choice-second {
+        display: block;
+        margin-bottom: 1%;
+    }
+
+    .payment-form {
+        align-items: flex-start;
+    }
+
+    .field {
+        display: block;
+    }
+
+    .payment-form__field {
+        display: block;
+        width: 80%;
+        margin-top: 1%;
+    }
+
+    .payment-form__submit {
+        margin-left: 2%;
+    }
+
+    .payment-form__reset {
+        margin-left: 1%;
+    }
+}

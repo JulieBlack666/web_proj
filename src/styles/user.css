@@ -1,0 +1,57 @@
+.user-info {
+    padding-bottom: 2%;
+}
+
+.user-info__name {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.user-info__photo {
+    width: 15%;
+    float: right;
+    margin-left: 3%;
+    box-shadow: 0 0 6px rgb(177, 177, 177);
+}
+
+.user-info__requisites {
+    display: block;
+    margin: 4% 0;
+}
+
+.contacts {
+    margin-bottom: 0;
+}
+
+a:not(:hover) {
+    text-decoration: none;
+}
+
+.contacts__phone {
+    font-size: 90%;
+    color: rgb(87, 84, 84);
+    margin-right: 2%;
+}
+
+.contacts__site {
+    margin-right: 2%;
+}
+
+@media screen and (max-width: 768px) {
+    .user-info__header {
+        display: grid;
+        grid-template-areas: 'name'
+                            'img'; 
+    }
+
+    .user-info__name {
+        grid-area: name;
+    }
+
+    .user-info__photo {
+        float: none;
+        width: 30%;
+        margin: 2%;
+        grid-area: img;
+    }
+}
