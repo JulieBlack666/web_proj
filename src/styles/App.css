@@ -12,7 +12,8 @@ hr {
 
 @media screen and (max-width: 768px) {
   .App {
-    width: 100%;
+    width: 92%;
     margin: 0;
+    box-shadow: none;
   }
 }
