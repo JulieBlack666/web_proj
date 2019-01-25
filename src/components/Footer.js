@@ -1,33 +1,94 @@
 import React, { Component } from "react";
 import "../styles/Footer.css";
-import twi from "../images/twitter.png";
-import fb from "../images/facebook.png";
-import vk from "../images/vk.png";
+import {
+  FacebookShareButton,
+  FacebookShareCount,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  GooglePlusShareButton,
+  GooglePlusIcon,
+  VKShareButton,
+  VKIcon,
+  OKShareButton,
+  OKIcon
+} from "react-share";
 
 export default class Footer extends Component {
+  shareLink = "http://github.com";
+  title = "Check this out!";
+
   render() {
     return (
       <footer className="footer">
-        <p className="share twitter">
-          <a className="share-link" href="https://twitter.com/intent/tweet?text=Hello%20world">
-            <img className="share_img" src={twi} alt="twit" />
-            Твитнуть
-          </a>
-        </p>
-        <p className="share fb">
-          <a
-            className="share-link"
-            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+        <div className="footer__share-link">
+          <TwitterShareButton
+            url={this.shareLink}
+            title={this.title}
+            className="footer__share-button"
           >
-            <img className="share_img" src={fb} alt="facebook" />
-            Поделиться
-          </a>
-        </p>
-        <p className="share vk">
-          <a className="share-link" href="https://vk.com/share.php?url=http://mysite.com">
-            <img className="share_img" src={vk} alt="vk" />
-          </a>
-        </p>
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+        </div>
+        <div className="footer__share-link">
+          <FacebookShareButton
+            url={this.shareUrl}
+            quote={this.title}
+            className="footer__share-button"
+          >
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+
+          <FacebookShareCount url={this.shareUrl} className="footer__share-count">
+            {count => count}
+          </FacebookShareCount>
+        </div>
+
+        <div className="footer__share-link">
+          <GooglePlusShareButton
+            url={this.shareLink}
+            title={this.title}
+            className="footer__share-button"
+          >
+            <GooglePlusIcon size={32} round />
+          </GooglePlusShareButton>
+        </div>
+
+        <div className="footer__share-link">
+          <VKShareButton url={this.shareLink} title={this.title} className="footer__share-button">
+            <VKIcon size={32} round />
+          </VKShareButton>
+        </div>
+
+        <div className="footer__share-link">
+          <LinkedinShareButton
+            url={this.shareLink}
+            title={this.title}
+            className="footer__share-button"
+          >
+            <LinkedinIcon size={32} round />
+          </LinkedinShareButton>
+        </div>
+
+        <div className="footer__share-link">
+          <OKShareButton url={this.shareLink} title={this.title} className="footer__share-button">
+            <OKIcon size={32} round />
+          </OKShareButton>
+        </div>
+
+        <div className="footer__share-link">
+          <TelegramShareButton
+            url={this.shareLink}
+            title={this.title}
+            className="footer__share-button"
+          >
+            <TelegramIcon size={32} round />
+          </TelegramShareButton>
+        </div>
       </footer>
     );
   }
