@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import InputMask from "react-input-mask";
 
 export default class RequirePay extends Component {
   state = {
@@ -125,7 +126,8 @@ export default class RequirePay extends Component {
         </p>
         <p className="field">
           <label for="phone">Телефон:</label>
-          <input
+          <InputMask
+            mask="+7 999 999-99-99"
             className={"payment-form__field " + this.getClass("tel")}
             id="phone"
             name="tel"

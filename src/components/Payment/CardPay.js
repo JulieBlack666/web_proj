@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import InputMask from "react-input-mask";
 
 export default class CardPay extends Component {
   state = {
@@ -20,7 +21,7 @@ export default class CardPay extends Component {
   };
 
   checks = {
-    cardNo: x => /^\d{16}$/.test(x),
+    cardNo: x => /^\d{4} \d{4} \d{4} \d{4}$/.test(x),
     sum: x => Number(x) >= 1000 && Number(x) <= 75000,
     cardExpDate: x => {
       const splitted = x.split("/").map(e => parseInt(e));
@@ -66,13 +67,14 @@ export default class CardPay extends Component {
         <p className="field">
           {this.isFormValid()}
           <label for="cardNo">Номер карты: </label>
-          <input
+          <InputMask
+            mask="9999 9999 9999 9999"
             type="text"
             name="cardNo"
             className={"payment-form__field " + this.getClass("cardNo")}
             id="cardNo"
-            pattern="\d{16}"
-            placeholder="1234567891011112"
+            pattern="^\d{4} \d{4} \d{4} \d{4}$"
+            placeholder="1234 5678 9101 1112"
             onChange={this.handleInput}
           />
         </p>
@@ -90,7 +92,8 @@ export default class CardPay extends Component {
         </p>
         <p className="field">
           <label for="cardExpDate">Срок действия карты:</label>
-          <input
+          <InputMask
+            mask="99/99"
             className={"payment-form__field " + this.getClass("cardExpDate")}
             name="cardExpDate"
             id="cardExpDate"
