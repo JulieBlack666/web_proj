@@ -53,7 +53,7 @@ export default class BankPay extends Component {
 
   render() {
     return (
-      <form className="payment-form">
+      <form className="payment-form" action="/bank_payment" method="post">
         <p className="field">
           <label for="INN">От кого: </label>
           <input

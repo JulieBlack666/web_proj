@@ -63,7 +63,7 @@ export default class RequirePay extends Component {
 
   render() {
     return (
-      <form className="payment-form">
+      <form className="payment-form" action="/req_payment" method="post">
         <p className="field">
           <label for="INN">ИНН получателя: </label>
           <input

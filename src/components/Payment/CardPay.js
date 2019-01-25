@@ -63,9 +63,8 @@ export default class CardPay extends Component {
 
   render() {
     return (
-      <form className="payment-form">
+      <form className="payment-form" action="/card_payment" method="post">
         <p className="field">
-          {this.isFormValid()}
           <label for="cardNo">Номер карты: </label>
           <InputMask
             mask="9999 9999 9999 9999"
@@ -98,7 +97,7 @@ export default class CardPay extends Component {
             name="cardExpDate"
             id="cardExpDate"
             type="text"
-            pattern="^(0\d)|(1[0-2])/(1[7-9])|(2\d)|(3[0-5])$"
+            pattern="^\d\d/\d\d$"
             placeholder="ММ/ГГ"
             onChange={this.handleInput}
           />
