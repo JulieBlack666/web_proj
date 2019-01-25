@@ -56,7 +56,9 @@ export default class CardPay extends Component {
     for (const key in this.state) {
       if (this.state[key] !== "" && key !== "isValid") {
         this.setState({ [key]: "" });
-        this.state.isValid[key] = false;
+        if (key !== "comment") {
+          this.state.isValid[key] = false;
+        }
       }
     }
   };
