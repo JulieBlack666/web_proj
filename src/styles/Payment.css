@@ -43,9 +43,23 @@
     margin: 1%;
 }
 
+.red {
+    border: 1px solid red;
+    background: rgba(255, 93, 93, 0.26);
+}
+
+.green {
+    border: 1px solid green;
+    background: rgba(112, 255, 93, 0.26);
+}
+
 .payment-form__field {
     width: 67%;
     padding: 1%;
+}
+
+.payment-form__field:focus {
+    outline: 0;
 }
 
 .payment-form__submit {
@@ -57,7 +71,11 @@
     align-self: flex-start;
 }
 
-.payment-form__submit:hover {
+.payment-form__submit:disabled {
+    opacity: 0.5;
+}
+
+.payment-form__submit:not(:disabled):hover {
     cursor: pointer;
     transform: scale(1.1);
     transition-duration: 200ms;
