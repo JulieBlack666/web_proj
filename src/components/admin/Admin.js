@@ -10,15 +10,34 @@ export default class Admin extends Component {
     sort_field: ""
   };
 
+  keyNames = {
+    _id: "Идентификатор",
+    cardNo: "Номер карты",
+    cvc: "cvc",
+    cardExpDate: "Действует до",
+    sum: "Сумма платежа",
+    comment: "Комментарий",
+    bik: "БИК",
+    inn: "ИНН",
+    acc: "Номер счёта",
+    for: "Что оплачено",
+    tel: "Телефон",
+    mail: "Почта",
+    trusted: "Безопасность"
+  };
+
   renderTable() {
     if (this.state.table.length === 0) {
-      return "";
+      return <div> Значения отсутствуют</div>;
     }
 
     if (this.state.error) {
-      return <div> Значения отсутствуют</div>;
+      return <div> Где-то ошибка</div>;
     }
-    const headers = Object.keys(this.state.table[0]);
+    const headers = Object.keys(this.state.table[0])
+      .filter(e => typeof this.keyNames[e] !== "undefined")
+      .map(e => this.keyNames[e]);
+
     return (
       <table border="1">
         <tr>
@@ -28,15 +47,17 @@ export default class Admin extends Component {
         </tr>
         {this.state.table.map(e => (
           <tr bgcolor={e["trusted"] === true ? "white" : "red"}>
-            {Object.keys(e).map(key => (
-              <td>
-                {key === "trusted" ? (
-                  <button onClick={() => this.makeUntrusted(e["_id"])}>Unsafe</button>
-                ) : (
-                  e[key]
-                )}{" "}
-              </td>
-            ))}
+            {Object.keys(e)
+              .filter(x => typeof this.keyNames[x] !== "undefined")
+              .map(key => (
+                <td>
+                  {key === "trusted" ? (
+                    <button onClick={() => this.makeUntrusted(e["_id"])}>Unsafe</button>
+                  ) : (
+                    e[key]
+                  )}{" "}
+                </td>
+              ))}
           </tr>
         ))}
       </table>
