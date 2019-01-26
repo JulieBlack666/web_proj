@@ -130,7 +130,7 @@ export default class Admin extends Component {
         />
         <form className="adm-panel_filters" target="dummyframe">
           <h4>Фильтр:</h4>
-          <label for="filter">Значение для поиска: </label>
+          <label for="filter">Значение&nbsp;для&nbsp;поиска:&nbsp;&nbsp;</label>
           <input
             className="filter__text"
             type="text"
@@ -138,7 +138,7 @@ export default class Admin extends Component {
             id="filter"
             onChange={this.handleInput}
           />
-          <label for="field"> Поле для поиска: </label>
+          <label for="field"> Поле&nbsp;для&nbsp;поиска:&nbsp;</label>
           <input
             className="filter__text"
             type="text"
@@ -147,16 +147,16 @@ export default class Admin extends Component {
             onChange={this.handleInput}
           />
           <h4>Сортировка:</h4>
-          <label for="sort-field">Поле сортировки: </label>
+          <label for="sort-field">Поле&nbsp;сортировки:&nbsp;</label>
           <input
             className="filter__text"
             type="text"
             name="sort_field"
             id="sort-field"
             onChange={this.handleInput}
-          />
+          />{" "}
           <input type="checkbox" id="desc" onChange={this.handleCheck} />
-          <label for="desc"> В порядке убывания</label>
+          <label for="desc">&nbsp;В&nbsp;порядке&nbsp;убывания</label>
           <br />
           <button className="filter__button" onClick={this.getCardPayments.bind(this)}>
             Получить платежи с карты

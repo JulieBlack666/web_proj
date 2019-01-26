@@ -9,6 +9,7 @@
     padding-bottom: 5%;
     text-align: center;
     box-shadow: 0 0 5px gray;
+    overflow-x: scroll;
 }
 
 table {
@@ -29,3 +30,15 @@ button:hover {
     cursor: pointer;
 }
 
+
+@media screen and (max-width: 768px) {
+    .adm-panel {
+        width: 100%;
+    }
+
+    .filter__text{
+        display: block;
+        margin: 0 auto 5%;
+        width: 40%;
+    }
+}
