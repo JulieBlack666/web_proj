@@ -8,7 +8,8 @@ const paymentSchema = mongoose.Schema({
   for: String,
   sum: Number,
   tel: String,
-  mail: String
+  mail: String,
+  trusted: Boolean
 });
 
 module.exports = mongoose.model("RequirePayment", paymentSchema);

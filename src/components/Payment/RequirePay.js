@@ -107,7 +107,7 @@ export default class RequirePay extends Component {
             id="forWhat"
             name="for"
             type="text"
-            pattern=".*(без НДС)|(НДС 18%)|(НДС 10%)"
+            pattern=".*((без НДС)|(НДС 18%)|(НДС 10%))"
             placeholder="НДС 18%"
             onChange={this.handleInput}
           />

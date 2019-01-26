@@ -1,0 +1,30 @@
+.dummyframe {
+    display: none;
+}
+
+.adm-panel {
+    width: 90%;
+    min-height: 300px;
+    margin: auto;
+    padding-bottom: 5%;
+    text-align: center;
+    box-shadow: 0 0 5px gray;
+}
+
+table {
+    margin: 5% auto;
+}
+
+.filter__text {
+    margin-right: 2%;
+    width: 13%;
+}
+
+.filter__button {
+    margin: 3%; 
+}
+
+button:hover {
+    cursor: pointer;
+}
+

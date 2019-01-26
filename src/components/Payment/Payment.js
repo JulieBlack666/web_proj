@@ -14,10 +14,10 @@ export default class Payment extends Component {
         <div className="box-wrapper">
           <Navigation />
           <Switch>
-            <Redirect exact from="/" to="/pay" />
-            <Route path="/pay/using_online_bank" component={BankPay} />
-            <Route path="/request_payment" component={RequirePay} />
-            <Route path="/pay/using_card" component={CardPay} />
+            <Redirect exact from="/main" to="/main/pay" />
+            <Route path="/main/pay/using_online_bank" component={BankPay} />
+            <Route path="/main/request_payment" component={RequirePay} />
+            <Route path="/main/pay/using_card" component={CardPay} />
           </Switch>
         </div>
       </BrowserRouter>
